@@ -1,0 +1,10 @@
+{% extends 'products/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3>Update Your Product Details..</h3>
+<form method="POST">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit" class="btn btn-primary btn-block mb-5">Update</button>
+</form>
+{% endblock %}

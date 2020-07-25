@@ -1,0 +1,11 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block content %}
+<h3>More info on a {{ product.title }}</h3>
+<p></p>
+{% include 'products/modal.html' %}
+Availabilty of the product: {{ product.active }}<br>
+<a href="{% url 'products:delete' product.slug %}"><button class="btn btn-danger btn-block">Delete a product</button></a>
+<a href="{% url 'products:update' product.slug %}"><button class="btn btn-primary btn-block mt-3">Update a product</button></a>
+<a href="{% url 'products:home' %}"><button class="btn btn-info btn-block mt-3">Back to products</button></a>
+{% endblock %}

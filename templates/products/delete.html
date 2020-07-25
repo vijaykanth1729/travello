@@ -1,0 +1,10 @@
+{% extends 'products/base.html' %}
+{% block content %}
+<h5>Delete a product<h5>
+<form method="POST">
+  {% csrf_token %}
+  <button class="btn btn-danger" type="submit">Are You sure you want to delete?</button>
+  <a href="{% url 'products:home' %}">Go back</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'products/base.html' %}
+{% block content %}
+<table class="table table-bordered table-hover">
+  <!-- class="table table-bordered table-hover" -->
+  <!-- <thead class="thead-dark"> -->
+  <thead class="thead-dark">
+  <tr>
+    <th>Title</th>
+    <th>Active</th>
+    <th>Price</th>
+    <th>Sale_Price</th>
+    <th>Updated</th>
+  <tr>
+    </thead>
+    <tr>
+  {% for product in products %}
+  <td><a href="{% url 'products:detail'  product.slug %}">{{ product.title }}</a></td>
+  <td> {{ product.active }}</td>
+  <td> {{ product.price }}</td>
+  <td> {{ product.sale_price }}</td>
+  <td> {{ product.updated }}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}
